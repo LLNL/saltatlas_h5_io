@@ -52,7 +52,7 @@ Build is not required.
 Here we describe how to build our example and test programs.
 
 Before following the instruction below,
-load the path of an installed HDF5 as described in Section [Specify Installed HDF5 Location](#specify-hdf5-location).
+load the path of an installed HDF5 as described in Section [Specify Installed HDF5 Location](#specify-installed-hdf5-location).
 
 ```bash
 module load gcc/8.3.1
