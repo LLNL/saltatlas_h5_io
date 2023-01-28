@@ -1,6 +1,6 @@
 # Overview
 
-saltatlas_h5_io is a header-only library and depends on only HDF5 (C/C++).
+saltatlas_h5_io is a header-only library and depends on only HDF5 (C/C++, tested with HDF5 v1.10.7).
 
 All header files are located in [./include/saltatlas_h5_io](./include/saltatlas_h5_io).
 
