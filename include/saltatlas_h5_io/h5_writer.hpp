@@ -148,7 +148,7 @@ class h5_writer {
 
   /// \brief Create a 1D dataset.
   /// Returns true on success; otherwise, false.
-  template <typename data_type>
+  template <typename T>
   bool priv_create_1d_datasets(const std::string &dataset_name,
                                const hsize_t      size) {
     if (!m_ptr_h5file) return false;
@@ -165,7 +165,7 @@ class h5_writer {
 
       m_ptr_h5datasets[dataset_name] =
           std::make_unique<H5::DataSet>(m_ptr_h5file->createDataSet(
-              dataset_name.c_str(), data_type(data_type{}), dataspace, cparms));
+              dataset_name.c_str(), data_type(T{}), dataspace, cparms));
       return true;
     });
 
@@ -195,7 +195,7 @@ class h5_writer {
       H5::DataSpace dataspace(1, &write_size);
 
       m_ptr_h5datasets.at(dataset_name)
-          ->write(buf.data(), H5::PredType::IEEE_F64LE, dataspace,
+          ->write(buf.data(), data_type(T{}), dataspace,
                   space_to_write);
       return true;
     });
